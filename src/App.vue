@@ -22,6 +22,9 @@ import {
 } from '@supabase/supabase-js';
 const supabase = createClient("https://wfznyxsorktnwezmfldw.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzMjY5MDI0MiwiZXhwIjoxOTQ4MjY2MjQyfQ.DNrwFELGTURjmmzhqe46Ppejct00gjSap73ijiyeSsA");
 */
+Array.prototype.sort_by = function(key_func, reverse = false) {
+  return this.sort((a, b) => (key_func(b) - key_func(a)) * (reverse ? 1 : -1))
+}
 export default {
   name: 'App',
   components: {
@@ -46,7 +49,9 @@ export default {
       } = await this.$sb
         .from('Events')
         .select();
-      data.forEach((item) => {
+      let events = data;
+      events.sort_by(el => el.id, false);
+      events.forEach((item) => {
         that.events.push(item);
         console.log(item);
       });
