@@ -59,6 +59,7 @@ a {
   color: #1c81fd;
   font-size: 1.65em;
   cursor: pointer;
+  display: none !important;
 }
 
 a.disabled {
