@@ -1,5 +1,5 @@
 <template>
-<a href="#" @click="handle($event)" :class="type">
+<a :href="link" target="_blank" :class="type">
   <slot></slot>
 </a>
 </template>
@@ -8,12 +8,8 @@
 export default {
   name: 'Button',
   props: {
-    type: String
-  },
-  methods: {
-    handle(e) {
-      e.preventDefault();
-    }
+    type: String,
+    link: String
   }
 }
 </script>

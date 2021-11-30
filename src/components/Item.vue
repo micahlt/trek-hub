@@ -4,7 +4,7 @@
   <p><i class="eva eva-calendar-outline"></i> <span :contenteditable="editMode" title="Date" @input="onInput($event, 'date')">{{ date }}</span> | <i class="eva eva-clock-outline"></i> <span :contenteditable="editMode" title="Time"
       @input="onInput($event, 'time')">{{ time }}</span></p>
   <p title="Description" class="description" :contenteditable="editMode" @input="onInput($event, 'description')">{{ description }}</p>
-  <Button v-if="!editMode && signUp != 'soon'" class="action" @click="openWindow(signUp)">Sign Up</Button> <Button v-if="!editMode && location != 'soon'" class="action" type="secondary" @click="openWindow(location)">Location</Button>
+  <Button v-if="!editMode && signUp != 'soon'" class="action" :link="signUp">Sign Up</Button> <Button v-if="!editMode && location != 'soon'" class="action" type="secondary" :link="location">Location</Button>
   <p class="small" v-if="location == 'soon' && signUp == 'soon'">Location and sign-up coming soon</p>
 </div>
 </template>
