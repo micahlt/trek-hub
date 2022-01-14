@@ -33,6 +33,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 nav {
+  position: fixed;
+  z-index: 1;
   width: 100%;
   height: 4em;
   box-shadow:
